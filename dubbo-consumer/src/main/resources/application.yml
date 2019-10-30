@@ -1,0 +1,12 @@
+server:
+  port: 58086
+
+dubbo:
+  application:
+    id: dubbo-consumer
+  registry:
+    address: zookeeper://learn:2181
+  protocol:
+    host: 192.168.0.113
+  provider:
+    host: 192.168.0.113

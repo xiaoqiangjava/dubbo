@@ -1,0 +1,18 @@
+server:
+  port: 58088
+
+# dubbo配置
+dubbo:
+  application:
+    id: dubbo-service
+  scan:
+    base-packages: com.xq.learn.dubbo.service.impl
+  registry:
+    # address: multicast://224.4.5.6:12345
+    address: zookeeper://learn:2181
+    client: curator
+    # 指定缓存文件，可以缓存服务列表提供者列表，当注册中心不可用时，从缓存读取，类似于eureka中的自我保护机制
+    file: ${user.home}/output/dubbo.cache
+  protocol:
+    name: dubbo
+    port: 20880
